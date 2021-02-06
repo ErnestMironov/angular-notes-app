@@ -1,8 +1,13 @@
 <h1>Блог</h1>
-<div class="card-grid">
+<div *ngIf="notes.length; else noNotes" class="card-grid">
   <!-- Выводим все записи -->
   <app-card *ngFor="let note of notes" [note]="note"></app-card>
 </div>
+<ng-template #noNotes>
+  <div class="no-notes">
+    Нажмите на кнопку "Добавить" для создания новой записи
+  </div>
+</ng-template>
 
 <!-- Рендерит модальное окно, и ловит из него события: закрытия окна и добавления новой записи -->
 <app-modal
