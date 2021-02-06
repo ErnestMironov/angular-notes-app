@@ -1,0 +1,24 @@
+<div class="modal-wrap {{ modalActive ? 'active' : '' }}">
+  <form ngNativeValidate action="post" class="modal" (ngSubmit)="addNote()">
+    <input
+      class="modal__input input"
+      type="text"
+      [(ngModel)]="title"
+      name="title"
+      placeholder="Введите название"
+      required
+    />
+    <textarea
+      class="modal__input input"
+      [(ngModel)]="content"
+      cols="30"
+      rows="10"
+      name="content"
+      placeholder="Содержимое"
+    ></textarea>
+    <div class="modal__btn-row">
+      <div (click)="hideModal()" class="modal__btn btn">Отмена</div>
+      <button type="submit" class="modal__btn btn">Сохранить</button>
+    </div>
+  </form>
+</div>

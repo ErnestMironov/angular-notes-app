@@ -1,0 +1,9 @@
+<div class="card">
+  <h2 class="card__title">{{ note.title }}</h2>
+  <p class="card__content">
+    {{ note.content }}
+  </p>
+  <button class="card__go-to btn" [routerLink]="['notes', note.id]">
+    Перейти
+  </button>
+</div>

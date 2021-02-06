@@ -1,0 +1,49 @@
+.modal-wrap {
+  position: fixed;
+  background-color: rgba(156, 156, 156, 0.651);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  z-index: -1;
+  transition: all ease 0.2s;
+
+  &.active {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+
+  &__input {
+    display: block;
+    padding: 5px 10px;
+    width: 100%;
+    resize: none;
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+
+  &__btn-row {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+}

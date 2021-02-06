@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+body {
+  background-color: #dddddd;
+  font-family: "Roboto Mono", monospace;
+  padding-bottom: 50px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: min(1110px, 90%);
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 15px;
+  cursor: pointer;
+  background: rgb(164, 178, 255);
+  border-radius: 5px;
+  border: 1px solid rgb(70, 95, 235);
+  font-size: 16px;
+
+  &_danger {
+    background: rgb(255, 131, 131);
+    border: 1px solid rgb(207, 3, 20);
+  }
+}

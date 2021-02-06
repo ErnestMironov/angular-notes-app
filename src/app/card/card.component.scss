@@ -1,0 +1,25 @@
+.card {
+  background-color: #fff;
+  padding: 20px 10px;
+  border-radius: 10px;
+
+  &__title {
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  &__content {
+    margin-top: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 200px;
+  }
+
+  &__go-to {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

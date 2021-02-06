@@ -1,0 +1,27 @@
+<div class="container note">
+  <button class="btn" routerLink="">Назад</button>
+  <form ngNativeValidate action="post" (ngSubmit)="changeNote()">
+    <input
+      class="note__input"
+      type="text"
+      name="title"
+      id=""
+      required
+      [(ngModel)]="title"
+    />
+    <textarea
+      class="note__input"
+      name="content"
+      id=""
+      cols="30"
+      rows="10"
+      [(ngModel)]="content"
+    ></textarea>
+    <div class="note__btns-row">
+      <div (click)="removeNote()" class="modal__btn btn btn_danger">
+        Удалить
+      </div>
+      <button type="submit" class="modal__btn btn">Сохранить</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,10 @@
+<h1>Блог</h1>
+<div class="card-grid">
+  <app-card *ngFor="let note of notes" [note]="note"></app-card>
+</div>
+<app-modal
+  [modalActive]="modalActive"
+  (hideModalEvent)="hideModal()"
+  (addNoteEvent)="addNote($event)"
+></app-modal>
+<button class="add-note btn" (click)="showModal()">+ Добавить</button>
