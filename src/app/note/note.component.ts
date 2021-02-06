@@ -10,6 +10,8 @@ import { DataService } from '../data.service';
 })
 export class NoteComponent implements OnInit {
   ngOnInit(): void {}
+
+  // Определям свойства записи
   id: number;
   note: any;
   title: string;
@@ -20,12 +22,16 @@ export class NoteComponent implements OnInit {
     private activateRoute: ActivatedRoute,
     private dataService: DataService
   ) {
+    // Получаем id записи из url
     this.id = parseInt(activateRoute.snapshot.params['id']);
+
+    // Получаем свойства записи из сервиса
     this.note = this.dataService.getNoteById(this.id);
     this.title = this.note.title;
     this.content = this.note.content;
   }
 
+  // Удаляем запись и возвращаемся на главную страницу
   removeNote() {
     const remove: boolean = confirm('Вы уверены что хотите удалить запись?');
     if (remove) {
@@ -34,6 +40,7 @@ export class NoteComponent implements OnInit {
     }
   }
 
+  // Сохраяем изменения в записи и возвращаемся на главную стираницу
   changeNote() {
     const note = {
       title: this.title,

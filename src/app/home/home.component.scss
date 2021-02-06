@@ -10,6 +10,13 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, calc(100% / 3 - 20px));
   grid-gap: 30px;
+
+  @media screen and(max-width: 1000px) {
+    grid-template-columns: repeat(2, calc(100% / 2 - 15px));
+  }
+  @media screen and(max-width: 600px) {
+    grid-template-columns: 100%;
+  }
 }
 
 .add-note {

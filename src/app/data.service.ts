@@ -11,6 +11,7 @@ export interface Notes {
 export class DataService {
   constructor() {}
 
+  // Получаем массив с записями из local storage
   private data: Notes[] = JSON.parse(localStorage.getItem('notes')) || [
     {
       title: 'Test title 1',
@@ -38,20 +39,29 @@ export class DataService {
     },
   ];
 
+  // Возвращает массив с записями из сервиса
   getNotes(): Notes[] {
     return this.data;
   }
+
+  // Возвращает запись по id
   getNoteById(id) {
     return this.data.find((note) => note.id === id);
   }
+
+  // Удаляет запись из сервиса и local storage
   removeNote(id) {
     this.data = this.data.filter((note) => note.id !== id);
     localStorage.setItem('notes', JSON.stringify(this.data));
   }
+
+  // Добавляет запись в сервис и local storage
   addNote(note: any) {
     this.data.push(note);
     localStorage.setItem('notes', JSON.stringify(this.data));
   }
+
+  // Изменяет запись в сервисе и local storage
   changeNote(note: any) {
     this.data = this.data.map((el) =>
       el.id === note.id ? (el = note) : (el = el)

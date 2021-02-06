@@ -1,10 +1,15 @@
 <h1>Блог</h1>
 <div class="card-grid">
+  <!-- Выводим все записи -->
   <app-card *ngFor="let note of notes" [note]="note"></app-card>
 </div>
+
+<!-- Рендерит модальное окно, и ловит из него события: закрытия окна и добавления новой записи -->
 <app-modal
   [modalActive]="modalActive"
   (hideModalEvent)="hideModal()"
   (addNoteEvent)="addNote($event)"
 ></app-modal>
+
+<!-- Открывает окно для добавления новой записи -->
 <button class="add-note btn" (click)="showModal()">+ Добавить</button>

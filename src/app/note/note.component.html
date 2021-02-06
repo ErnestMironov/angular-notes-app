@@ -1,4 +1,5 @@
 <div class="container note">
+  <!-- Возвращает на главную страницу -->
   <button class="btn" routerLink="">Назад</button>
   <form ngNativeValidate action="post" (ngSubmit)="changeNote()">
     <input
@@ -18,9 +19,12 @@
       [(ngModel)]="content"
     ></textarea>
     <div class="note__btns-row">
+      <!-- Удалить запись -->
       <div (click)="removeNote()" class="modal__btn btn btn_danger">
         Удалить
       </div>
+
+      <!-- Сохранить изменения -->
       <button type="submit" class="modal__btn btn">Сохранить</button>
     </div>
   </form>

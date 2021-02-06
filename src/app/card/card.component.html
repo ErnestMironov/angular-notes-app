@@ -3,6 +3,8 @@
   <p class="card__content">
     {{ note.content }}
   </p>
+
+  <!-- Открывает страницу записи -->
   <button class="card__go-to btn" [routerLink]="['notes', note.id]">
     Перейти
   </button>

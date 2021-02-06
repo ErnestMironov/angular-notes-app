@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-gh": "ng build --prod --base-href https://ernestmironov.github.io/angular-notes-app/",
+    "public-gh": "npm run build-gh && npx angular-cli-ghpages — dir=dist/angular-notes-app/"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +21,8 @@
     "@angular/platform-browser": "~11.1.2",
     "@angular/platform-browser-dynamic": "~11.1.2",
     "@angular/router": "~11.1.2",
+    "angular-cli-ghpages": "^1.0.0-rc.1",
+    "gh-pages": "^3.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
