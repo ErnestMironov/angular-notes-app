@@ -51,7 +51,8 @@ export class DataService {
 
   // Удаляет запись из сервиса и local storage
   removeNote(id) {
-    this.data = this.data.filter((note) => note.id !== id);
+    const idx = this.data.findIndex((el) => el.id === id);
+    this.data.splice(idx, 1);
     localStorage.setItem('notes', JSON.stringify(this.data));
   }
 
@@ -63,9 +64,8 @@ export class DataService {
 
   // Изменяет запись в сервисе и local storage
   changeNote(note: any) {
-    this.data = this.data.map((el) =>
-      el.id === note.id ? (el = note) : (el = el)
-    );
+    const idx = this.data.findIndex((el) => el.id === note.id);
+    this.data[idx] = note;
     localStorage.setItem('notes', JSON.stringify(this.data));
   }
 }
